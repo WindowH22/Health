@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기초대사량 측정하기</title>
+</head>
+<body>
+    <script>
+        
+        function cell(){
+            var s = document.getElementById("sex");
+            var index = s.selectedIndex;
+            var sex = s.options[index].value;
+                sex = (sex == "true")?true:false;
+            var  height = document.getElementById("height").value
+            var  kg = document.getElementById("kg").value
+            var  old = document.getElementById("old").value
+           
+            if (sex===true){
+               Kcal=655+(9.6*kg)+(1.8*height)-(4.7*old)
+                document.write(Kcal+"입니다.")
+            }
+            else {
+               Kcal=66+(13.7*kg)+(5*height)-(6.5*old)
+             document.write(Kcal+"입니다.")
+                
+            }
+        }
+       
+        
+    </script>
+    <h1>기초대사량 측정하기</h1>
+    <hr>
+    <form>
+        <table>
+            <tr><td><label>성별<select id="sex">
+                <option value="false" selected>남</option>
+                <option value="true">여</option>
+               </select></label></td>
+                <td><lavel>신장: <input id="height" type="number" value="160"></lavel></td></tr>
+            <tr><td><label>몸무게:<input id="kg" type="number"value="60"></label></td>
+                <td><label>나이:<input id="old" type="number" value="20"></label></td> </tr>  
+                <tr><td><button type="button" onclick="cell()">계산</button></td>
+                    
+                </tr>
+        </table>
+    </form>
+</body>
+</html>
